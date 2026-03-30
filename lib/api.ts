@@ -73,7 +73,7 @@ export interface EtaResult {
   predictedArrivalAt: string;
   targetArrivalTime: string;
   isLate: boolean;
-  safeDepatureAt: string;
+  safeDepartureAt: string;
   bufferMinutes: number;
 }
 

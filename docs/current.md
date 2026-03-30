@@ -36,6 +36,7 @@
 - [x] lib/api.ts: 백엔드 API 클라이언트 전체
 - [x] app/layout.tsx: PWA 메타태그, 한국어, 폰트 정리
 - [x] README, AGENTS.md, docs/ 문서 체계 수립
+- [x] lib/api.ts EtaResult.safeDepatureAt → safeDepartureAt 오타 수정
 
 ## 화면 구현 순서 (권장)
 
