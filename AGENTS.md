@@ -66,6 +66,8 @@ Claude가 Codex에 작업을 넘길 때는 아래 형식으로 작업 범위를 
 
 - Claude는 `/review` 여부와 관계없이 코드 변경이 필요한 작업을 직접 구현하지 않는다.
 - 구현 시작 게이트는 slash command가 아니라 `docs/current.md`의 상태와 `docs/tasks/`의 활성 스펙이다.
+- `/start-harness`는 단순 진입 명령이 아니라, 함께 전달된 명령어와 프롬프트를 해석해 지원되는 skill/명령 중 가장 적절한 것을 먼저 선택·트리거하는 오케스트레이터로 동작해야 한다.
+- 이때 판단 대상은 superpowers만이 아니라 gstack, 저장소 운영 문서에 정의된 workflow, 기타 현재 환경에서 지원되는 skill/명령 전체를 포함한다.
 - Codex는 `codex-ready` 상태의 활성 스펙이 있거나, direct-to-codex intake에서 스스로 `direct-codex-safe`로 분류한 경우에만 구현을 시작한다.
 - direct-to-codex 요청도 intake와 문서 게이트를 우회할 수 없다.
 - 한 저장소에는 동시에 하나의 활성 구현 스펙만 유지한다.
