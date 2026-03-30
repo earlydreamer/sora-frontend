@@ -1,11 +1,11 @@
 # 현재 작업 컨텍스트
 
-최종 업데이트: 2026-03-30
-업데이트 주체: Claude
+최종 업데이트: 2026-03-31 01:31
+업데이트 주체: Codex
 
 ## 프로젝트 상태
 
-프론트엔드 scaffold 완료. 백엔드 서버 기동 후 각 화면 구현 시작 가능.
+프론트엔드 scaffold 완료 + handoff harness 운영 문서/게이트/템플릿 반영 완료. 백엔드 서버 기동 후 각 화면 구현 시작 가능.
 
 ## 활성 컨텍스트
 
@@ -16,6 +16,14 @@
 - **화면 골격**: 6개 라우트 모두 생성됨 (/, /result, /routes, /history, /auth/login, /auth/register). 내용은 TODO.
 - **백엔드 URL**: `.env.local`의 `NEXT_PUBLIC_API_BASE_URL`. 기본값 `http://localhost:3000`.
 - **PWA**: manifest.json 작성 완료. 아이콘(icon-192.png, icon-512.png) 미생성.
+- **운영 하네스**: `docs/operations/agent-handoff-harness.md`, `docs/operations/agent-handoff-harness-overview.md`, `docs/tasks/`, `AGENTS.md`에 frontend 저장소용 handoff harness 규칙을 반영했다.
+- **리뷰 루프 제한**: 같은 파일/같은 task에서 reviewer 수정 루프는 최대 2회까지만 반복하고, 이후에는 blocking 이슈만 추가 수정한 뒤 다음 단계로 진행한다.
+
+## 하네스 상태
+- 상태: done
+- 현재 담당: 사람
+- 활성 스펙: 없음
+- Claude 재판단 필요: 없음
 
 ## 작업 체크리스트
 
@@ -37,6 +45,9 @@
 - [x] app/layout.tsx: PWA 메타태그, 한국어, 폰트 정리
 - [x] README, AGENTS.md, docs/ 문서 체계 수립
 - [x] lib/api.ts EtaResult.safeDepatureAt → safeDepartureAt 오타 수정
+- [x] handoff harness 운영 절차 문서 추가
+- [x] AGENTS에 handoff harness 게이트와 리뷰 루프 제한 반영
+- [x] `docs/tasks/` handoff 템플릿 및 사용 규칙 추가
 
 ## 화면 구현 순서 (권장)
 
