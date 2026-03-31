@@ -1,6 +1,6 @@
 # 현재 작업 컨텍스트
 
-최종 업데이트: 2026-03-31 23:54
+최종 업데이트: 2026-04-01 00:16
 업데이트 주체: Codex
 
 ## 프로젝트 상태
@@ -19,6 +19,7 @@
 - **운영 하네스**: `docs/operations/agent-handoff-harness.md`, `docs/operations/agent-handoff-harness-overview.md`, `docs/tasks/`, `AGENTS.md`에 frontend 저장소용 handoff harness 규칙을 반영했다.
 - **start-harness 오케스트레이션**: `/start-harness`는 전달된 명령과 프롬프트를 기준으로 superpowers, gstack, repo-local workflow, 기타 지원 skill/명령 중 가장 적절한 흐름을 먼저 고른 뒤 하네스를 이어간다.
 - **최근 완료 task**: backend에서 안정화한 thin trigger, 지연 로드 문맥, tracked-task GitHub gate, downstream ownership 구조를 frontend 문서에 반영했다.
+- **tmux future contract**: backend live 검증 결과를 기준으로, frontend에 tmux helper를 도입할 때도 Codex worker별 격리 `CODEX_HOME` runtime을 사용해야 한다.
 - **리뷰 루프 제한**: 같은 파일/같은 task에서 reviewer 수정 루프는 최대 2회까지만 반복하고, 이후에는 blocking 이슈만 추가 수정한 뒤 다음 단계로 진행한다.
 - **GitHub 파이프라인**: 신규 작업은 `gh` 기반 한국어 issue 생성 → `codex/<issue-number>-brief-slug` 브랜치 작업 → 한국어 PR → `main` merge → issue/PR/브랜치 정리 순서로 진행한다.
 
