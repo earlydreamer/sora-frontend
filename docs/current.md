@@ -1,11 +1,11 @@
 # 현재 작업 컨텍스트
 
-최종 업데이트: 2026-04-01 00:16
+최종 업데이트: 2026-04-01 13:38
 업데이트 주체: Codex
 
 ## 프로젝트 상태
 
-프론트엔드 scaffold 완료 상태를 유지하면서 `start-harness` 소비 계약을 backend와 같은 해석으로 정렬하는 tracked task를 완료했다.
+프론트엔드 scaffold 완료 상태를 유지하면서, GUI 히스토리 추적 관점을 반영한 non-squash merge 기본 정책까지 운영 문서에 반영했다.
 
 ## 활성 컨텍스트
 
@@ -18,10 +18,11 @@
 - **PWA**: manifest.json 작성 완료. 아이콘(icon-192.png, icon-512.png) 미생성.
 - **운영 하네스**: `docs/operations/agent-handoff-harness.md`, `docs/operations/agent-handoff-harness-overview.md`, `docs/tasks/`, `AGENTS.md`에 frontend 저장소용 handoff harness 규칙을 반영했다.
 - **start-harness 오케스트레이션**: `/start-harness`는 전달된 명령과 프롬프트를 기준으로 superpowers, gstack, repo-local workflow, 기타 지원 skill/명령 중 가장 적절한 흐름을 먼저 고른 뒤 하네스를 이어간다.
-- **최근 완료 task**: backend에서 안정화한 thin trigger, 지연 로드 문맥, tracked-task GitHub gate, downstream ownership 구조를 frontend 문서에 반영했다.
+- **최근 완료 task**: GitHub issue #4 / branch `codex/4-visible-history-merge-policy`
 - **tmux future contract**: backend live 검증 결과를 기준으로, frontend에 tmux helper를 도입할 때도 Codex worker별 격리 `CODEX_HOME` runtime을 사용해야 한다.
 - **리뷰 루프 제한**: 같은 파일/같은 task에서 reviewer 수정 루프는 최대 2회까지만 반복하고, 이후에는 blocking 이슈만 추가 수정한 뒤 다음 단계로 진행한다.
 - **GitHub 파이프라인**: 신규 작업은 `gh` 기반 한국어 issue 생성 → `codex/<issue-number>-brief-slug` 브랜치 작업 → 한국어 PR → `main` merge → issue/PR/브랜치 정리 순서로 진행한다.
+- **merge 정책**: Fork 같은 GUI Git 클라이언트에서 `main` 히스토리를 바로 추적할 수 있어야 하므로 기본 merge 전략은 non-squash이며, squash는 예외 상황에서만 사용한다.
 
 ## 하네스 상태
 - 상태: done
@@ -41,6 +42,7 @@
 - [ ] PWA 아이콘 생성 (icon-192.png, icon-512.png) — 블로커: 없음, 언제든 가능
 
 ### 완료
+- [x] GUI 히스토리 추적을 위한 non-squash merge 정책을 frontend 문서에 반영
 - [x] Next.js 16 App Router scaffold
 - [x] Cloudflare Pages 정적 export 설정 (output, trailingSlash, images.unoptimized)
 - [x] PWA manifest.json
