@@ -1,11 +1,11 @@
 # 현재 작업 컨텍스트
 
-최종 업데이트: 2026-03-31 03:01
+최종 업데이트: 2026-03-31 23:54
 업데이트 주체: Codex
 
 ## 프로젝트 상태
 
-프론트엔드 scaffold 완료 + handoff harness/GitHub 작업 파이프라인 반영 완료. 백엔드 서버 기동 후 각 화면 구현 시작 가능.
+프론트엔드 scaffold 완료 상태를 유지하면서 `start-harness` 소비 계약을 backend와 같은 해석으로 정렬하는 tracked task를 완료했다.
 
 ## 활성 컨텍스트
 
@@ -18,6 +18,7 @@
 - **PWA**: manifest.json 작성 완료. 아이콘(icon-192.png, icon-512.png) 미생성.
 - **운영 하네스**: `docs/operations/agent-handoff-harness.md`, `docs/operations/agent-handoff-harness-overview.md`, `docs/tasks/`, `AGENTS.md`에 frontend 저장소용 handoff harness 규칙을 반영했다.
 - **start-harness 오케스트레이션**: `/start-harness`는 전달된 명령과 프롬프트를 기준으로 superpowers, gstack, repo-local workflow, 기타 지원 skill/명령 중 가장 적절한 흐름을 먼저 고른 뒤 하네스를 이어간다.
+- **최근 완료 task**: backend에서 안정화한 thin trigger, 지연 로드 문맥, tracked-task GitHub gate, downstream ownership 구조를 frontend 문서에 반영했다.
 - **리뷰 루프 제한**: 같은 파일/같은 task에서 reviewer 수정 루프는 최대 2회까지만 반복하고, 이후에는 blocking 이슈만 추가 수정한 뒤 다음 단계로 진행한다.
 - **GitHub 파이프라인**: 신규 작업은 `gh` 기반 한국어 issue 생성 → `codex/<issue-number>-brief-slug` 브랜치 작업 → 한국어 PR → `main` merge → issue/PR/브랜치 정리 순서로 진행한다.
 
@@ -52,6 +53,7 @@
 - [x] `docs/tasks/` handoff 템플릿 및 사용 규칙 추가
 - [x] GitHub issue/PR 기반 작업 파이프라인 문서화
 - [x] `/start-harness`가 superpowers/gstack/지원 skill 전체를 대상으로 가장 적절한 흐름을 먼저 선택하도록 오케스트레이션 규칙 강화
+- [x] frontend handoff harness 문서를 thin trigger + downstream ownership 구조로 정렬
 
 ## 화면 구현 순서 (권장)
 
